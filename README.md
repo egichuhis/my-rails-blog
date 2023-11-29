@@ -62,7 +62,7 @@ Clone this repository to your desired folder:
 ### Install
 
 ```sh
-  install Ruby on your local machine
+  install Ruby, Rails & PostgreSQL on your local machine
 ```
 
 ### Usage
