@@ -29,7 +29,8 @@
 
 ### Tech Stack <a name="tech-stack"></a>
 
-- **Ruby**
+- **Ruby on Rails**
+- **PostgreSQL**
 
 <!-- Features -->
 
