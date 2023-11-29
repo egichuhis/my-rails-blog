@@ -110,7 +110,7 @@ If you like this project please give it a star on [GitHub](https://github.com/eg
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-I would like to thank Microverse for this opportunity to create amazing databases using SQL.
+I would like to thank Microverse for this opportunity to create amazing models using Ruby Active Records & databases using SQL.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
