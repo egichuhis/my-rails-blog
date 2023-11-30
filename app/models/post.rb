@@ -3,9 +3,14 @@ class Post < ApplicationRecord
   has_many :comments
   has_many :likes
 
-  # updates the posts counter for a user
-  def update_posts_counter
-    author.update(posts_counter: author.posts.count)
+  # Update the comments counter for a post
+  def update_post_comments_counter
+    update(comments_counter: comments.count)
+  end
+
+  # Update the likes counter for a post
+  def update_post_likes_counter
+    update(likes_counter: likes.count)
   end
 
   # return 5 most recent comments for a given post

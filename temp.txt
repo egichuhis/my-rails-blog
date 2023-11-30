@@ -1,0 +1,46 @@
+   first_user = User.create(name: 'Tom', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Mexico.')
+   second_user = User.create(name: 'Lilly', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Poland.')
+
+      first_post = Post.create(author: first_user, title: 'Hello', text: 'This is my first post')
+      second_post = Post.create(author: first_user, title: 'Hello', text: 'This is my second post')
+      third_post = Post.create(author: first_user, title: 'Hello', text: 'This is my third post')
+      fourth_post = Post.create(author: first_user, title: 'Hello', text: 'This is my fourth post')
+      fifth_post = Post.create(author: first_user, title: 'Hello', text: 'This is my fifth post')
+
+      first_post = Post.create(author: second_user, title: 'Hello', text: 'This is my first post')
+      second_post = Post.create(author: second_user, title: 'Hello', text: 'This is my second post')
+      third_post = Post.create(author: second_user, title: 'Hello', text: 'This is my third post')
+      fourth_post = Post.create(author: second_user, title: 'Hello', text: 'This is my fourth post')
+      fifth_post = Post.create(author: second_user, title: 'Hello', text: 'This is my fifth post')
+
+      user = User.first
+      recent_posts = user.recent_posts
+      puts recent_posts
+
+      User.all.each do |user|
+        user.update(posts_counter: user.posts.count)
+      end
+
+      Comment.create(post: first_post, user: second_user, text: 'Hi Tom!' )
+      Comment.create(post: first_post, user: second_user, text: 'Hi Wom!' )
+      Comment.create(post: first_post, user: second_user, text: 'Hi Rom!' )
+      Comment.create(post: first_post, user: second_user, text: 'Hi Fom!' )
+      Comment.create(post: first_post, user: second_user, text: 'Hi Dom!' )
+      Comment.create(post: first_post, user: second_user, text: 'Hi Com!' )
+      Comment.create(post: first_post, user: second_user, text: 'Hi Vom!' )
+
+      Comment.create(post: first_post, user: first_user, text: 'Hi DAm!' )
+      Comment.create(post: first_post, user: first_user, text: 'Hi CAm!' )
+      Comment.create(post: first_post, user: first_user, text: 'Hi VAm!' )
+
+      puts first_post.recent_comments
+
+    Post.all.each do |post|
+      post.update(comments_counter: post.comments.count)
+    end
+
+    Post.all.each do |post|
+      post.update(likes_counter: post.likes.count)
+    end
+
+  
