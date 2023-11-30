@@ -33,6 +33,8 @@
       Comment.create(post: first_post, user: first_user, text: 'Hi CAm!' )
       Comment.create(post: first_post, user: first_user, text: 'Hi VAm!' )
 
+      Like.create(post: first_post, user: first_user)
+
       puts first_post.recent_comments
 
     Post.all.each do |post|
