@@ -1,3 +1,5 @@
+# users_controller.rb
+
 class UsersController < ApplicationController
   def index
     # Placeholder, no actual logic for now

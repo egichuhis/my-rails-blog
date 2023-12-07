@@ -1,3 +1,5 @@
+# posts_controller.rb
+
 class PostsController < ApplicationController
   def index
     # Placeholder, no actual logic for now
