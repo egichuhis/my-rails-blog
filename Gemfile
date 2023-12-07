@@ -73,4 +73,6 @@ group :test do
   gem 'selenium-webdriver'
 
   gem 'factory_bot_rails', '~> 6.4', '>= 6.4.2'
+
+  gem 'rails-controller-testing'
 end
