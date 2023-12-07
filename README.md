@@ -36,7 +36,9 @@
 
 ### Key Features <a name="key-features"></a>
 
-- **Create models and tables: User, Post, Comment, Like**
+- **Models and tables: User, Post, Comment, Like**
+- **Controllers for: User, Post**
+- **Views for: User posts**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
