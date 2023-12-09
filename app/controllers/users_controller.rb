@@ -2,10 +2,11 @@
 
 class UsersController < ApplicationController
   def index
-    # Placeholder, no actual logic for now
+    @users = User.all
   end
 
   def show
-    # Placeholder, no actual logic for now
+    @user = User.find(params[:id])
+    @posts = @user.recent_posts
   end
 end
