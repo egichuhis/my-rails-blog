@@ -48,3 +48,5 @@
     end
 
   
+I want to display a post (/users/id/posts/id). The post comments should also be shown below the post. Here is the code.
+

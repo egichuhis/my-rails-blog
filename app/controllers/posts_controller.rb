@@ -7,6 +7,6 @@ class PostsController < ApplicationController
   end
 
   def show
-    # Placeholder, no actual logic for now
+    @post = Post.find(params[:id])
   end
 end
