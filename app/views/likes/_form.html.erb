@@ -1,3 +1,5 @@
+<!-- views/likes/_form.html.erb -->
+
 <%= bootstrap_form_with(model: [@post, @like], local: true) do |form| %>
   <% if @like.errors.any? %>
     <div id="error_explanation">

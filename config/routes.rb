@@ -1,14 +1,16 @@
 # config/routes.rb
 
 Rails.application.routes.draw do
-  get 'posts/index'
-  get 'posts/show'
-  get 'users/index'
-  get 'users/show'
+  root 'users#index'
+
   resources :users, only: [:index, :show] do
-    resources :posts, only: [:index, :show]
+    resources :posts, only: [:index, :show] do
+      resources :comments, only: [:create]
+      resources :likes, only: [:create]
+    end
   end
-  resources :posts, only: [] do
+
+  resources :posts, only: [:index, :show, :create, :update, :destroy] do
     resources :comments, only: [:create]
     resources :likes, only: [:create]
   end

@@ -1,4 +1,7 @@
-<%= bootstrap_form_with(model: [@post, @comment], local: true) do |form| %>
+<!-- views/comments/_form.html.erb -->
+
+<%= bootstrap_form_with(model: [@post, @comment], url: user_post_comments_path(@post.author, @post), local: true) do |form| %>
+
   <% if @comment.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
