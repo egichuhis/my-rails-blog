@@ -1,3 +1,5 @@
+<!-- views/users/show.html.erb -->
+
 <div class="container d-flex flex-column">
   <div class="row" style="margin-top: 5px;">
     <div class="col-md-2"><img class="img-fluid" src="<%= @user.photo %>" style="border-style: solid;" /></div>
@@ -27,6 +29,7 @@
         <p><strong><%= post.title %></strong></p>
         <p><%= post.text %></p>
         <h5 class="text-end">Comments: <%= post.comments.count %>, Likes: <%= post.likes.count %></h5>
+        <%= link_to "See details", user_post_path(@user, post), class: "btn btn-secondary" %>
       </div>
     </div>
   <% end %>
