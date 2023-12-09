@@ -1,9 +1,8 @@
 class LikesController < ApplicationController
-  before_action :find_post_and_user
+  before_action :find_user_and_post
 
   def create
-    @like = @post.likes.build
-    @like.user = current_user
+    @like = current_user.likes.build(post: @post)
 
     if @like.save
       redirect_to user_post_path(@user, @post), notice: 'Like was successfully created.'
@@ -15,8 +14,8 @@ class LikesController < ApplicationController
 
   private
 
-  def find_post_and_user
+  def find_user_and_post
     @user = User.find(params[:user_id])
-    @post = Post.find(params[:post_id])
+    @post = @user.posts.find(params[:post_id])
   end
 end

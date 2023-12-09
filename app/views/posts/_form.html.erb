@@ -2,8 +2,8 @@
 
 <%= bootstrap_form_with(model: [@user, @post], local: true) do |form| %>
   <% if @post.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+    <div id="error_explanation" class="alert alert-danger">
+      <h4><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h4>
 
       <ul>
         <% @post.errors.full_messages.each do |message| %>
@@ -13,17 +13,17 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
+  <div class="mb-3">
+    <%= form.label :title, class: "form-label" %>
+    <%= form.text_field :title, class: "form-control" %>
   </div>
 
-  <div class="field">
-    <%= form.label :text %>
-    <%= form.text_area :text %>
+  <div class="mb-3">
+    <%= form.label :text, class: "form-label" %>
+    <%= form.text_area :text, class: "form-control" %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="text-center">
+    <%= form.submit "Create Post", class: "btn btn-primary" %>
   </div>
 <% end %>
