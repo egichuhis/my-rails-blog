@@ -6,6 +6,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    # Placeholder, no actual logic for now
+    @user = User.find(params[:id])
+    @posts = @user.posts
   end
 end
