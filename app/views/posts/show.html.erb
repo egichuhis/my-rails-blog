@@ -18,7 +18,7 @@
 
   <div class="row" style="margin-top: 5px;border-style: solid;">
     <div class="col">
-      <% @post.comments.each do |comment| %>
+      <% @recent_comments.each do |comment| %>
         <h5>Username: <%= comment.user.name %></h5>
         <p><%= comment.text %></p>
       <% end %>
