@@ -1,4 +1,4 @@
-<%= form_with(model: [@post, @like], local: true) do |form| %>
+<%= bootstrap_form_with(model: [@post, @like], local: true) do |form| %>
   <% if @like.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@like.errors.count, "error") %> prohibited this like from being saved:</h2>
