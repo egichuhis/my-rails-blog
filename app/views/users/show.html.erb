@@ -29,12 +29,16 @@
         <p><strong><%= post.title %></strong></p>
         <p><%= post.text %></p>
         <h5 class="text-end">Comments: <%= post.comments.count %>, Likes: <%= post.likes.count %></h5>
-        <%= link_to "See details", user_post_path(@user, post), class: "btn btn-secondary" %>
+        <div class="col align-self-center d-flex justify-content-end">
+        <%= link_to "See details", user_post_path(@user, post), class: "btn btn-light border border-1" %>
+        </div>
       </div>
     </div>
   <% end %>
 
   <div class="row">
-    <div class="col text-center" style="margin-top: 5px;"><button class="btn" type="button" style="border-style: solid;border-color: var(--bs-btn-color);width: 137px;box-shadow: 3px 3px;border-radius: 0px;">See all posts</button></div>
+    <div class="col text-center" style="margin-top: 5px;">
+      <%= link_to "See all posts", user_posts_path(@user), class: "btn btn-light border border-1" %>
+    </div>
   </div>
 </div>
