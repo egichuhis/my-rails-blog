@@ -23,19 +23,20 @@
         <p><%= post.text %></p>
         <h5 class="text-end">Comments: <%= post.comments.count %>, Likes: <%= post.likes.count %></h5>
         <div class="col align-self-center d-flex justify-content-end">
-        <%= link_to "See details", user_post_path(@user, post), class: "btn btn-light border border-1" %>
+          <%= link_to "See details", user_post_path(@user, post), class: "btn btn-light border border-1" %>
         </div>
       </div>
-    </div>
 
-    <% post.comments.each do |comment| %>
-      <div class="row" style="margin-top: 5px;border-style: solid;">
-        <div class="col">
-          <h5>Username: <%= comment.user.name %></h5>
-          <p><%= comment.text %></p>
+      <!-- Display recent comments for the current post -->
+      <% post.recent_comments.each do |comment| %>
+        <div class="row">
+          <div class="col">
+            <h5>Username: <%= comment.user.name %></h5>
+            <p><%= comment.text %></p>
+          </div>
         </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   <% end %>
 
   <div class="row">

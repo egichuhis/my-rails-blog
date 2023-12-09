@@ -10,6 +10,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @comment = Comment.new
     @like = Like.new
+    @all_comments = @post.comments
     @recent_comments = @post.recent_comments
   end
 

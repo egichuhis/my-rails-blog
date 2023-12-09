@@ -8,17 +8,17 @@
           <h5>Post #<%= @post.id %> by <%= @post.author.name %></h5>
         </div>
         <div class="col text-end">
-          <h5>Comments: <%= @post.comments.count %>, Likes: <%= @post.likes.count %></h5>
+          <h5>Comments: <%= @all_comments.count %>, Likes: <%= @post.likes.count %></h5>
         </div>
       </div>
     </div>
   </div>
   <p><span style="color: rgb(0, 0, 0);"><%= @post.text %></span></p>
-  <!-- Rest of your post content -->
 
   <div class="row" style="margin-top: 5px;border-style: solid;">
     <div class="col">
-      <% @recent_comments.each do |comment| %>
+      <!-- Show all comments for the current post -->
+      <% @all_comments.each do |comment| %>
         <h5>Username: <%= comment.user.name %></h5>
         <p><%= comment.text %></p>
       <% end %>
