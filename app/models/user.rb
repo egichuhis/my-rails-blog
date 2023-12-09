@@ -6,8 +6,6 @@ class User < ApplicationRecord
 
   validates :name, presence: true
 
-  private
-
   # returns the 3 most recent posts for a given user
   def recent_posts
     posts.order(created_at: :desc).limit(3)
