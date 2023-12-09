@@ -1,48 +1,41 @@
+<!-- posts/index.html.erb -->
+
 <div class="container d-flex flex-column">
-    <div class="row" style="margin-top: 5px;">
-        <div class="col-md-2"><img class="img-fluid" src="../../assets/images/1.jpg" style="border-style: solid;" /></div>
-        <div class="col-md-10 align-self-center">
-            <div class="row" style="border-style: solid;">
-                <div class="col">
-                    <h3>User name</h3>
-                </div>
-                <div class="col align-self-end">
-                    <h5>Number of posts: x</h5>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="row" style="margin-top: 5px;border-style: solid;">
+  <div class="row" style="margin-top: 5px;">
+    <div class="col-md-2"><img class="img-fluid" src="<%= @user.photo %>" style="border-style: solid;" /></div>
+    <div class="col-md-10 align-self-center">
+      <div class="row" style="border-style: solid;">
         <div class="col">
-            <h5>Post #1</h5>
-            <p><strong><span style="color: rgb(0, 0, 0);">Lorem Ipsum</span></strong><span style="color: rgb(0, 0, 0);"> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s...</span></p>
-            <h5 class="text-end">Comments: x, Likes: y</h5>
+          <h3><%= @user.name %></h3>
         </div>
+        <div class="col align-self-end">
+          <h5>Number of posts: <%= @user.posts.count %></h5>
+        </div>
+      </div>
     </div>
+  </div>
+
+  <% @posts.each do |post| %>
     <div class="row" style="margin-top: 5px;border-style: solid;">
+      <div class="col">
+        <h5>Post #<%= post.id %></h5>
+        <p><strong><%= post.title %></strong></p>
+        <p><%= post.text %></p>
+        <h5 class="text-end">Comments: <%= post.comments.count %>, Likes: <%= post.likes.count %></h5>
+      </div>
+    </div>
+
+    <% post.comments.each do |comment| %>
+      <div class="row" style="margin-top: 5px;border-style: solid;">
         <div class="col">
-            <h5>Username: Comment 1</h5>
-            <h5>Username: Comment 2</h5>
-            <h5>Username: Comment 3</h5>
-            <h5>Username: Comment 4</h5>
+          <h5>Username: <%= comment.user.name %></h5>
+          <p><%= comment.text %></p>
         </div>
-    </div>
-    <div class="row" style="margin-top: 5px;border-style: solid;">
-        <div class="col">
-            <h5>Post #2</h5>
-            <p><strong><span style="color: rgb(0, 0, 0);">Lorem Ipsum</span></strong><span style="color: rgb(0, 0, 0);"> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s...</span></p>
-            <h5 class="text-end">Comments: x, Likes: y</h5>
-        </div>
-    </div>
-    <div class="row" style="margin-top: 5px;border-style: solid;">
-        <div class="col">
-            <h5>Username: Comment 1</h5>
-            <h5>Username: Comment 2</h5>
-            <h5>Username: Comment 3</h5>
-            <h5>Username: Comment 4</h5>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col text-center" style="margin-top: 5px;"><button class="btn" type="button" style="border-style: solid;border-color: var(--bs-btn-color);width: 137px;box-shadow: 3px 3px;border-radius: 0px;">Pagination</button></div>
-    </div>
+      </div>
+    <% end %>
+  <% end %>
+
+  <div class="row">
+    <div class="col text-center" style="margin-top: 5px;"><button class="btn" type="button" style="border-style: solid;border-color: var(--bs-btn-color);width: 137px;box-shadow: 3px 3px;border-radius: 0px;">Pagination</button></div>
+  </div>
 </div>

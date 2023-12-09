@@ -2,7 +2,8 @@
 
 class PostsController < ApplicationController
   def index
-    # Placeholder, no actual logic for now
+    @user = User.find(params[:user_id])
+    @posts = @user.posts.includes(:comments)
   end
 
   def show
