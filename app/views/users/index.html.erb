@@ -1,3 +1,5 @@
+<!-- views/users/index.html.erb -->
+
 <div class="container d-flex flex-column">
   <% @users.each do |user| %>
     <div class="row" style="margin-top: 5px;">
@@ -17,6 +19,7 @@
       </div>
     </div>
   <% end %>
-  <!-- Render the form using the @post variable -->
+
+  <!-- Render the form outside the loop -->
   <%= render 'posts/form', post: @post %>
 </div>
