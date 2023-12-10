@@ -13,10 +13,9 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="mb-3 mx-auto" style="width: 50%;">
-    <%= form.label :comment, class: "form-label" %>
-    <%= form.text_area :text, class: "form-control" %>
+  <div class="mb-3">
+    <%= form.label :text, "Comments", class: "form-label" %>
+    <%= form.text_area :text, class: "form-control", hide_label: true  %>
   </div>
 
   <div class="mb-3 mx-auto d-flex align-center justify-content-center">
