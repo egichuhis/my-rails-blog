@@ -14,7 +14,7 @@
     </div>
   </div>
   <p><span style="color: rgb(0, 0, 0);"><%= @post.text %></span></p>
-
+<%= render 'likes/form', like: Like.new %>
   <div class="row" style="margin-top: 5px;border-style: solid;">
     <div class="col">
       <!-- Show all comments for the current post -->
@@ -22,6 +22,12 @@
         <h5>Username: <%= comment.user.name %></h5>
         <p><%= comment.text %></p>
       <% end %>
+      
     </div>
+    
   </div>
+  <%= render 'comments/form', comment: Comment.new %>
+  
 </div>
+
+

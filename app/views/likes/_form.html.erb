@@ -1,0 +1,19 @@
+<!-- views/likes/_form.html.erb -->
+
+<%= bootstrap_form_with(model: [@user, @post, @like], url: user_post_likes_path(@post.author, @post), local: true) do |form| %>
+  <% if @like.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@like.errors.count, "error") %> prohibited this like from being saved:</h2>
+
+      <ul>
+        <% @like.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

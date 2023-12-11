@@ -1,0 +1,30 @@
+<!-- posts/_form.html.erb -->
+
+<%= bootstrap_form_with(model: post, url: user_posts_path(@user), local: true) do |form| %>
+  <% if post.errors.any? %>
+    <div id="error_explanation" class="alert alert-danger">
+      <h4><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h4>
+
+      <ul>
+        <% post.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="mt-5">
+    <h4>Create new Post</h4>
+  </div>
+  
+  <div class="mb-3">
+    <%= form.text_field :title, class: "form-control" %>
+  </div>
+
+  <div class="mb-3"> 
+    <%= form.text_area :text, class: "form-control" %>
+  </div>
+
+  <div class="text-center">
+    <%= form.submit "Create Post", class: "btn btn-primary" %>
+  </div>
+<% end %>
