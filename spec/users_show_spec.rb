@@ -1,4 +1,4 @@
-# spec/system/users_show_spec.rb
+# spec/users_show_spec.rb
 
 require 'rails_helper'
 
