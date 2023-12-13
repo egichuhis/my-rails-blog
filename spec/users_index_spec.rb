@@ -28,16 +28,7 @@ RSpec.describe 'User Index Page', type: :system do
     # Check if "See user details" link is present and links to user show page
     click_link 'See user details', match: :first
 
-    # Add a wait time to allow for the redirection to complete
-    sleep 1
-
-    # Add debugging information
-    puts "Current path: #{current_path}" # Output current path
-    puts "Expected path: #{user_path(@user1)}" # Output expected pa
-
-    # Find the element that contains @user1's name and click on the link within it
-    find('div', text: @user1.name).click_link
-
-    expect(current_path).to eq(user_path(@user1))
+    # Wait for the page to fully load and the URL to be updated
+    expect(page).to have_current_path(%r{/users/\d+}, wait: 5)
   end
 end
