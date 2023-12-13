@@ -29,9 +29,7 @@ RSpec.describe 'User Post Index Page', type: :system do
 
       # Check if the "See details" button for each post is present and redirects to post's show page
       click_link 'See details', href: user_post_path(@user, post)
-      # Uncomment the line below if you want to check that the correct path is navigated to
-      # expect(current_path).to eq(user_post_path(@user, post))
-      # Go back to the user post index page
+
       visit user_posts_path(@user)
     end
 
@@ -40,9 +38,5 @@ RSpec.describe 'User Post Index Page', type: :system do
 
     # Click on the pagination button and check the behavior (add expectations if needed)
     click_button 'Pagination'
-    # ...
-
-    # Add more expectations for pagination if needed
-    # ...
   end
 end
