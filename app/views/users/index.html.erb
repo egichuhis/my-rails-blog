@@ -22,4 +22,11 @@
 
   <!-- Render the form outside the loop -->
   <%= render 'posts/form', post: @post %>
+
+  <!-- Add the logout button -->
+  <div class="row mt-3">
+    <div class="col">
+      <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "btn btn-danger" %>
+    </div>
+  </div>
 </div>
