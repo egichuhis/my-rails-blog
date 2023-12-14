@@ -13,6 +13,8 @@ gem 'pg', '~> 1.1'
 
 gem 'bootstrap_form', '~> 5.4'
 
+gem 'devise'
+
 # Use the Puma web server [https://github.com/puma/puma]
 gem 'puma', '>= 5.0'
 
