@@ -1,6 +1,8 @@
 # posts_controller.rb
 
 class PostsController < ApplicationController
+  load_and_authorize_resource
+
   def index
     @user = User.find(params[:user_id])
     @posts = @user.posts.includes(:comments)
@@ -24,9 +26,18 @@ class PostsController < ApplicationController
     end
   end
 
+  def destroy
+    @post.destroy
+    redirect_to root_path, notice: 'Post was successfully deleted.'
+  end
+
   private
 
   def post_params
     params.require(:post).permit(:title, :text)
+  end
+
+  def set_post
+    @post = Post.find(params[:id])
   end
 end

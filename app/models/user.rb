@@ -14,4 +14,13 @@ class User < ApplicationRecord
   def recent_posts
     posts.order(created_at: :desc).limit(3)
   end
+
+  # Add role column
+  enum role: %i[user admin]
+  # Set default role to user
+  after_initialize :set_default_role, if: :new_record?
+
+  def set_default_role
+    self.role ||= :user
+  end
 end
