@@ -13,6 +13,10 @@ gem 'pg', '~> 1.1'
 
 gem 'bootstrap_form', '~> 5.4'
 
+gem 'letter_opener', '~> 1.4', '>= 1.4.1'
+
+gem 'devise'
+
 # Use the Puma web server [https://github.com/puma/puma]
 gem 'puma', '>= 5.0'
 
@@ -50,6 +54,17 @@ gem 'bootsnap', require: false
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem 'debug', platforms: %i[mri windows]
+<<<<<<< HEAD
+=======
+
+  # The RSpec testing framework
+  gem 'rspec-rails'
+
+  # Capybara, the library that allows us to interact with the browser using Ruby
+  gem 'capybara'
+
+  gem 'selenium-webdriver', '~> 4.11'
+>>>>>>> 096088c (Initial commit for feature_devise_authentication)
 end
 
 group :development do
@@ -65,15 +80,21 @@ group :development do
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
+<<<<<<< HEAD
 
   gem 'rspec-rails'
+=======
+>>>>>>> 096088c (Initial commit for feature_devise_authentication)
 end
 
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
+<<<<<<< HEAD
   gem 'capybara'
   gem 'selenium-webdriver'
 
+=======
+>>>>>>> 096088c (Initial commit for feature_devise_authentication)
   gem 'factory_bot_rails', '~> 6.4', '>= 6.4.2'
 
   gem 'rails-controller-testing'
