@@ -1,7 +1,6 @@
-class ApplicationController < ActionController::Base
-  protect_from_forgery with: :exception
+# controllers/application_controller.rb
 
-  before_action :update_allowed_parameters, if: :devise_controller?
+class ApplicationController < ActionController::Base
 
   protected
 
