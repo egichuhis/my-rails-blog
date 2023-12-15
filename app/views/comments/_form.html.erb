@@ -1,3 +1,24 @@
-<!-- views/comments/_form.html.erb -->
 
-
+ 
+ <%= bootstrap_form_with(model: [@post, @comment], url: user_post_comments_path(@post.author, @post), local: true) do |form| %>
+ 
+   <% if @comment.errors.any? %>
+     <div id="error_explanation" class="text-center">
+       <h2><%= pluralize(@comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
+ 
+       <ul>
+         <% @comment.errors.full_messages.each do |message| %>
+           <li><%= message %></li>
+         <% end %>
+       </ul>
+     </div>
+   <% end %>
+   <div class="mb-3 mt-5">
+     <%= form.label :text, "Comment", class: "form-label" %>
+     <%= form.text_area :text, class: "form-control", hide_label: true  %>
+   </div>
+ 
+   <div class="mb-3 mx-auto d-flex align-center justify-content-center">
+     <%= form.submit "Submit", class: "btn btn-sm btn-primary" %>
+   </div>
+ <% end %>
