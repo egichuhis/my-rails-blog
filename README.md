@@ -89,6 +89,12 @@ Start your interactive ruby shell `irb`:
 - Twitter: [@twitterhandle](https://twitter.com/egichuhis)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/edwin-gichuhi/)
 
+👤 **Md Mahadi Hasan Rifat**
+
+- GitHub: [@githubhandle](https://github.com/Rifat8080)
+- Twitter: [@twitterhandle](https://twitter.com/mdmahadirifat98)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/md-mahadi-hasan-rifat-8b7851265/)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FUTURE FEATURES -->
