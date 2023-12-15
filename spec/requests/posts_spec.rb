@@ -1,13 +1,13 @@
 require 'rails_helper'
 
 RSpec.describe 'Posts', type: :request do
-  describe 'GET /posts' do
+  describe 'GET users/:id/posts' do
     it 'renders the index template' do
-      get posts_index_path
-      expect(response).to have_http_status(200)
+      user = FactoryBot.create(:user)
+      get user_posts_path(user)
       expect(response).to render_template(:index)
-      expect(response.body).to include('User name')
-      expect(response.body).to include('Number of posts: x')
+      expect(response.body).to include('Number of posts')
+      expect(response.body).to include('Tom')
     end
   end
 
