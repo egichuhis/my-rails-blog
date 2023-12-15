@@ -30,7 +30,7 @@
 
         <!-- Add authorization for the Delete button for each comment -->
         <% if can? :destroy, comment %>
-          <%= link_to 'Delete Comment', user_post_path(@post.author, @post, @comment), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-sm btn-danger' %>
+          <%= link_to 'Delete Comment', user_post_comment_path(@post.author, @post, comment), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-sm btn-danger' %>
         <% end %>
       <% end %>
     </div>
