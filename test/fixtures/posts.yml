@@ -9,7 +9,7 @@ one:
 
 two:
   author: two
-  title: MyString
-  text: MyText
+  title: MyStringTwo
+  text: MyTextTwo
   comments_counter: 1
   likes_counter: 1
