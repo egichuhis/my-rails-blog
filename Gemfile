@@ -16,6 +16,7 @@ gem 'bootstrap_form', '~> 5.4'
 gem 'letter_opener', '~> 1.4', '>= 1.4.1'
 
 gem 'cancancan'
+
 gem 'devise'
 
 # Use the Puma web server [https://github.com/puma/puma]
