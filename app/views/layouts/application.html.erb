@@ -11,9 +11,6 @@
 </head>
 
 <body class="d-flex flex-column align-items-center justify-content-center">
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
-
   <% if user_signed_in? %>
     <!-- Top-right section with User label and Logout button -->
     <div class="container d-flex justify-content-between align-items-center">
@@ -28,6 +25,12 @@
       </div>
     </div>
   <% end %>
+
+  <div>
+    <!-- Notice and Alert messages -->
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+  </div>
 
   <%= yield %>
 
