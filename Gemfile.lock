@@ -88,6 +88,7 @@ GEM
       actionpack (>= 6.1)
       activemodel (>= 6.1)
     builder (3.2.4)
+    cancancan (3.5.0)
     capybara (3.39.2)
       addressable
       matrix
@@ -310,6 +311,7 @@ PLATFORMS
 DEPENDENCIES
   bootsnap
   bootstrap_form (~> 5.4)
+  cancancan
   capybara
   cssbundling-rails
   debug

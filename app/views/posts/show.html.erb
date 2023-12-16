@@ -1,7 +1,7 @@
 <!-- posts/show.html.erb -->
 
 <div class="container d-flex flex-column">
-  <div class="row" style="margin-top: 5px;border-style: solid;">
+  <div class="row" style="margin-top: 5px; border-style: solid;">
     <div class="col">
       <div class="row">
         <div class="col">
@@ -14,20 +14,27 @@
     </div>
   </div>
   <p><span style="color: rgb(0, 0, 0);"><%= @post.text %></span></p>
-<%= render 'likes/form', like: Like.new %>
-  <div class="row" style="margin-top: 5px;border-style: solid;">
+  <%= render 'likes/form', like: Like.new %>
+
+  <!-- Add authorization for the Delete button -->
+  <% if can? :destroy, @post %>
+    <%= link_to 'Delete Post', user_post_path(@post.author, @post), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-sm btn-danger' %>
+  <% end %>
+
+  <div class="row" style="margin-top: 5px; border-style: solid;">
     <div class="col">
       <!-- Show all comments for the current post -->
       <% @all_comments.each do |comment| %>
         <h5>Username: <%= comment.user.name %></h5>
         <p><%= comment.text %></p>
+
+        <!-- Add authorization for the Delete button for each comment -->
+        <% if can? :destroy, comment %>
+          <%= link_to 'Delete Comment', user_post_comment_path(@post.author, @post, comment), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-sm btn-danger' %>
+        <% end %>
       <% end %>
-      
     </div>
-    
   </div>
+
   <%= render 'comments/form', comment: Comment.new %>
-  
 </div>
-
-

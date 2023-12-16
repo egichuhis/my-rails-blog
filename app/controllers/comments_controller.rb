@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+  load_and_authorize_resource
   before_action :find_post_and_user
 
   def create
@@ -13,6 +14,11 @@ class CommentsController < ApplicationController
     end
   end
 
+  def destroy
+    @comment.destroy
+    redirect_to user_post_path(@user, @post), notice: 'Comment was successfully deleted.'
+  end
+
   private
 
   def find_post_and_user
@@ -22,5 +28,9 @@ class CommentsController < ApplicationController
 
   def comment_params
     params.require(:comment).permit(:text)
+  end
+
+  def set_comment
+    @comment = Comment.find(params[:id])
   end
 end
