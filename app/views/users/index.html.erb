@@ -1,6 +1,7 @@
 <!-- views/users/index.html.erb -->
 
 <div class="container d-flex flex-column">
+  
   <% @users.each do |user| %>
     <div class="row" style="margin-top: 5px;">
       <div class="col-md-2"><img class="img-fluid" src="<%= user.photo %>" style="border-style: solid;" /></div>
