@@ -15,21 +15,13 @@ class CommentsController < ApplicationController
     @comment = @post.comments.build(comment_params)
     @comment.user = current_user
 
-    if @comment.save
-      redirect_to user_post_path(@user, @post), notice: 'Comment was successfully created.'
-    else
-      # Handle validation errors or other failure scenarios
-      redirect_to user_post_path(@user, @post), alert: 'Comment creation failed.'
-    end
-
     respond_to do |format|
-      format.html { redirect_to user_post_path(@user, @post) }
-      format.json do
-        if comment.save
-          render json: comment, status: :created
-        else
-          render json: { errors: comment.errors.full_messages }, status: :unprocessable_entity
-        end
+      if @comment.save
+        format.html { redirect_to user_post_path(@user, @post), notice: 'Comment was successfully created.' }
+        format.json { render json: @comment, status: :created }
+      else
+        format.html { redirect_to user_post_path(@user, @post), alert: 'Comment creation failed.' }
+        format.json { render json: { errors: @comment.errors.full_messages }, status: :unprocessable_entity }
       end
     end
   end
