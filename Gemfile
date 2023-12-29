@@ -64,6 +64,10 @@ group :development, :test do
   gem 'capybara'
 
   gem 'selenium-webdriver', '~> 4.11'
+
+  gem 'rswag'
+
+  gem 'rswag-ui'
 end
 
 group :development do
