@@ -2,15 +2,27 @@ class CommentsController < ApplicationController
   load_and_authorize_resource
   before_action :find_post_and_user
 
+  def index
+    comments = @post.comments
+
+    respond_to do |format|
+      format.html
+      format.json { render json: comments }
+    end
+  end
+
   def create
     @comment = @post.comments.build(comment_params)
     @comment.user = current_user
 
-    if @comment.save
-      redirect_to user_post_path(@user, @post), notice: 'Comment was successfully created.'
-    else
-      # Handle validation errors or other failure scenarios
-      redirect_to user_post_path(@user, @post), alert: 'Comment creation failed.'
+    respond_to do |format|
+      if @comment.save
+        format.html { redirect_to user_post_path(@user, @post), notice: 'Comment was successfully created.' }
+        format.json { render json: @comment, status: :created }
+      else
+        format.html { redirect_to user_post_path(@user, @post), alert: 'Comment creation failed.' }
+        format.json { render json: { errors: @comment.errors.full_messages }, status: :unprocessable_entity }
+      end
     end
   end
 
